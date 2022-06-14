@@ -16,7 +16,7 @@ public class TipoUsuario {
 
 	/** The id tipo usuario. */
 	@Id
-	@Column(name = "idTipoUsuario", length = 30, nullable = false)
+	@Column(name = "idTipoUsuario",  nullable = false)
 	private Long idTipoUsuario;
 
 	/** The descripcion. */
