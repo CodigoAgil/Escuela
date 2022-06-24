@@ -29,4 +29,14 @@ public class FrontController {
 		return "contacto";
 	}
 	
+	/**
+	 * Conócenos.
+	 *
+	 * @param model the model
+	 * @return the string
+	 */
+	@RequestMapping(value = "/conocenos", method = RequestMethod.GET)
+	public String conocenos(final Model model) {
+		return "conocenos";
+	}
 }
