@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class EscuelaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EscuelaApplication.class, args);
+		SpringApplication.run(EscuelaApplication.class, args); 
 	}
 
 }
