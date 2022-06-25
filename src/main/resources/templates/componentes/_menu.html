@@ -1,0 +1,40 @@
+<head>
+   <meta charset="utf-8">
+ </head>
+<!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky" xmlns:th="http://www.thymeleaf.org">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="index.html" class="logo">
+                          <img src="assets/images/templatemo-eduwell.png" alt="EduWell Template">
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li class="scroll-to-section"><a href="#top" class="active">Inicio</a></li>
+                          <li class="scroll-to-section"><a href="#services">Servicios</a></li>
+                          <li class="scroll-to-section"><a href="#courses">Cursos</a></li>
+                          <li class="has-sub">
+                              <a href="javascript:void(0)">Páginas</a>
+                              <ul class="sub-menu">
+                                  <li><a th:href="@{/conocenos}">Conócenos</a></li>
+                                  <li><a href="our-services.html">Nosotros</a></li>
+                                  <li><a th:href="@{/contacto}">Contáctanos</a></li>
+                              </ul>
+                          </li>
+                          <li class="scroll-to-section"><a href="#testimonials">Testimonios</a></li> 
+                          <li class="scroll-to-section"><a href="#contact-section">Ayuda</a></li> 
+                      </ul>        
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
