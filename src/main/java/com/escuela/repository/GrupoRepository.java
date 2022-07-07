@@ -3,12 +3,12 @@ package com.escuela.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.escuela.entity.TipoUsuario;
+import com.escuela.entity.Grupo;
 
 /**
- * The Interface TipoUsuarioRepository.
+ * The Interface GrupoRepository.
  */
 @Repository
-public interface TipoUsuarioRepository extends JpaRepository<TipoUsuario, Long> {
+public interface GrupoRepository extends JpaRepository<Grupo, Long> {
 
 }

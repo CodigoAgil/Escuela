@@ -1,10 +1,14 @@
 package com.escuela.entity;
 
+import java.util.List;
 import java.util.Objects;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -19,47 +23,36 @@ public class Grado {
 	@Column(name = "idGrado", nullable = false)
 	private Long idGrado;
 
-	/** The nombre grado. */
-	@Column(name = "nombreGrado", length = 50, nullable = false)
-	private String nombreGrado;
+	/** The descripcion grado. */
+	@Column(name = "descripcionGrado", length = 50, nullable = false)
+	private String descripcionGrado;
 
-	/** The seccion. */
-	@Column(name = "seccion", length = 4, nullable = false)
-	private String seccion;
-
-	/** The tutor. */
-	@Column(name = "tutor", length = 30, nullable = false)
-	private String tutor;
-
-	/*
-	 * Fran todavia no esta la entidad Institucion que tiene relacion con esta entidad.
-	 */
-
-	/**
-	 * Instantiates a new grado.
-	 */
-	public Grado() {
-		super();
-	}
+	/** The grupos. */
+	@OneToMany(mappedBy = "grado", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<Grupo> grupos;
 
 	/**
 	 * Instantiates a new grado.
 	 *
 	 * @param idGrado
 	 *        the id grado
-	 * @param nombreGrado
-	 *        the nombre grado
-	 * @param seccion
-	 *        the seccion
-	 * @param tutor
-	 *        the tutor
+	 * @param descripcionGrado
+	 *        the descripcion grado
+	 * @param grupos
+	 *        the grupos
 	 */
-	public Grado(final Long idGrado, final String nombreGrado, final String seccion, final String tutor) {
+	public Grado(final Long idGrado, final String descripcionGrado, final List<Grupo> grupos) {
 		super();
 		this.idGrado = idGrado;
-		this.nombreGrado = nombreGrado;
-		this.seccion = seccion;
-		this.tutor = tutor;
+		this.descripcionGrado = descripcionGrado;
+		this.grupos = grupos;
+	}
+
+	/**
+	 * Instantiates a new grado.
+	 */
+	public Grado() {
+		super();
 	}
 
 	/**
@@ -82,60 +75,41 @@ public class Grado {
 	}
 
 	/**
-	 * Gets the nombre grado.
+	 * Gets the descripcion grado.
 	 *
-	 * @return the nombre grado
+	 * @return the descripcion grado
 	 */
-	public String getNombreGrado() {
-		return this.nombreGrado;
+	public String getDescripcionGrado() {
+		return this.descripcionGrado;
 	}
 
 	/**
-	 * Sets the nombre grado.
+	 * Sets the descripcion grado.
 	 *
-	 * @param nombreGrado
-	 *        the new nombre grado
+	 * @param descripcionGrado
+	 *        the new descripcion grado
 	 */
-	public void setNombreGrado(final String nombreGrado) {
-		this.nombreGrado = nombreGrado;
+	public void setDescripcionGrado(final String descripcionGrado) {
+		this.descripcionGrado = descripcionGrado;
 	}
 
 	/**
-	 * Gets the seccion.
+	 * Gets the grupos.
 	 *
-	 * @return the seccion
+	 * @return the grupos
 	 */
-	public String getSeccion() {
-		return this.seccion;
+	public List<Grupo> getGrupos() {
+		return this.grupos;
 	}
 
 	/**
-	 * Sets the seccion.
+	 * Sets the grupos.
 	 *
-	 * @param seccion
-	 *        the new seccion
+	 * @param grupos
+	 *        the new grupos
 	 */
-	public void setSeccion(final String seccion) {
-		this.seccion = seccion;
-	}
-
-	/**
-	 * Gets the tutor.
-	 *
-	 * @return the tutor
-	 */
-	public String getTutor() {
-		return this.tutor;
-	}
-
-	/**
-	 * Sets the tutor.
-	 *
-	 * @param tutor
-	 *        the new tutor
-	 */
-	public void setTutor(final String tutor) {
-		this.tutor = tutor;
+	public void setGrupos(final List<Grupo> grupos) {
+		this.grupos = grupos;
 	}
 
 	/**
@@ -145,7 +119,7 @@ public class Grado {
 	 */
 	@Override
 	public int hashCode() {
-		return Objects.hash(this.idGrado, this.nombreGrado, this.seccion, this.tutor);
+		return Objects.hash(this.descripcionGrado, this.grupos, this.idGrado);
 	}
 
 	/**
@@ -164,18 +138,7 @@ public class Grado {
 			return false;
 		}
 		final Grado other = (Grado) obj;
-		return Objects.equals(this.idGrado, other.idGrado) && Objects.equals(this.nombreGrado, other.nombreGrado) && Objects.equals(this.seccion, other.seccion)
-				&& Objects.equals(this.tutor, other.tutor);
-	}
-
-	/**
-	 * To string.
-	 *
-	 * @return the string
-	 */
-	@Override
-	public String toString() {
-		return "Grado [idGrado=" + this.idGrado + ", nombreGrado=" + this.nombreGrado + ", seccion=" + this.seccion + ", tutor=" + this.tutor + "]";
+		return Objects.equals(this.descripcionGrado, other.descripcionGrado) && Objects.equals(this.grupos, other.grupos) && Objects.equals(this.idGrado, other.idGrado);
 	}
 
 }
