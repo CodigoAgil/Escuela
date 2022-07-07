@@ -53,7 +53,7 @@ public class GrupoController {
 	 *        the model
 	 * @return the string
 	 */
-	@GetMapping("/showNewTagForm")
+	@GetMapping("/showNewGrupoForm")
 	public String showNewGrupoForm(final Model model) {
 
 		final Grupo grupo = new Grupo();
@@ -120,7 +120,7 @@ public class GrupoController {
 	 */
 	@GetMapping("/deleteGrupo/{id}")
 	public String deleteGrupo(@PathVariable(value = "id") final long id) {
-		this.grupoService.getGrupoById(id);
+		this.grupoService.deleteGrupo(id);
 		return GrupoController.REDIRIGIR_PAGINA_GRUPOS;
 
 	}

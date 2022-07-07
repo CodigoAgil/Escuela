@@ -183,19 +183,14 @@
                         </ul>
                     </li>
 
-                    <li class="nav-label">Apps</li>
+                    <li class="nav-label">Grados</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-app-store"></i><span class="nav-text">Apps</span></a>
+                                class="icon icon-app-store"></i><span class="nav-text">Grados </span></a>
                         <ul aria-expanded="false">
-                            <li><a href="/back/app-profile.html">Profile</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="/back/email-compose.html">Compose</a></li>
-                                    <li><a href="/back/email-inbox.html">Inbox</a></li>
-                                    <li><a href="/back/email-read.html">Read</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/back/app-calender.html">Calendar</a></li>
+                            <li><a href="/back/app-profile.html">Listado de grados</a></li>
+                            <li><a href="/back/app-profile.html">Nuevo grado</a></li>
+
+                            
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
@@ -396,111 +391,17 @@
                                     <table class="table student-data-table m-t-20">
                                         <thead>
                                             <tr>
-                                                <th>Subject</th>
-                                                <th>Grade Point</th>
-                                                <th>Percent Form</th>
-                                                <th>Percent Upto</th>
-                                                <th>Date</th>
+                                                <th>Grado</th>
+                                                <th>Acciones</th>                                             
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Class Test</td>
-                                                <td>Mathmatics</td>
-                                                <td>
-                                                    4.00
-                                                </td>
-                                                <td>
-                                                    95.00
-                                                </td>
-                                                <td>
-                                                    100
-                                                </td>
-                                                <td>20/04/2017</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Class Test</td>
-                                                <td>Mathmatics</td>
-                                                <td>
-                                                    4.00
-                                                </td>
-                                                <td>
-                                                    95.00
-                                                </td>
-                                                <td>
-                                                    100
-                                                </td>
-                                                <td>20/04/2017</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Class Test</td>
-                                                <td>English</td>
-                                                <td>
-                                                    4.00
-                                                </td>
-                                                <td>
-                                                    95.00
-                                                </td>
-                                                <td>
-                                                    100
-                                                </td>
-                                                <td>20/04/2017</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Class Test</td>
-                                                <td>Bangla</td>
-                                                <td>
-                                                    4.00
-                                                </td>
-                                                <td>
-                                                    95.00
-                                                </td>
-                                                <td>
-                                                    100
-                                                </td>
-                                                <td>20/04/2017</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Class Test</td>
-                                                <td>Mathmatics</td>
-                                                <td>
-                                                    4.00
-                                                </td>
-                                                <td>
-                                                    95.00
-                                                </td>
-                                                <td>
-                                                    100
-                                                </td>
-                                                <td>20/04/2017</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Class Test</td>
-                                                <td>English</td>
-                                                <td>
-                                                    4.00
-                                                </td>
-                                                <td>
-                                                    95.00
-                                                </td>
-                                                <td>
-                                                    100
-                                                </td>
-                                                <td>20/04/2017</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Class Test</td>
-                                                <td>Mathmatics</td>
-                                                <td>
-                                                    4.00
-                                                </td>
-                                                <td>
-                                                    95.00
-                                                </td>
-                                                <td>
-                                                    100
-                                                </td>
-                                                <td>20/04/2017</td>
+                                            <tr th:each ="grado : ${listaGrados}">
+                                                <td th:text="${grado.descripcionGrado}">Class Test</td> 
+                                                 <td>
+	                                                 <button type="button" class="btn btn-warning">Modificar</button>
+	                                                 <button type="button" class="btn btn-danger">Eliminar</button>                                    
+                                                 </td>                                              
                                             </tr>
                                         </tbody>
                                     </table>
